@@ -1,0 +1,103 @@
+/* =========================================================
+   Calculadora - estilo (pronto, não precisa alterar)
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #2b2f36;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+
+/* Corpo da calculadora */
+.calculadora {
+    background: #1c1e22;
+    width: 320px;
+    padding: 24px 20px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5),
+                inset 0 2px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Visor estilo LCD */
+.visor {
+    width: 100%;
+    height: 80px;
+    margin-bottom: 20px;
+    padding: 0 16px;
+    background: #c9d4b6;
+    color: #1f2a1a;
+    border: 4px solid #0f1012;
+    border-radius: 10px;
+    font-family: "Courier New", monospace;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: right;
+    box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.35);
+    outline: none;
+}
+
+/* Grade de teclas: 4 colunas */
+.teclado {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.tecla {
+    height: 60px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #f1f1f1;
+    background: #3a3e46;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #24272c;
+    transition: background 0.15s;
+}
+
+.tecla:hover {
+    background: #474c55;
+}
+
+/* Efeito de tecla "afundando" ao clicar */
+.tecla:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 #24272c;
+}
+
+/* Operações */
+.op {
+    background: #f08c2e;
+    box-shadow: 0 4px 0 #b5641c;
+}
+.op:hover { background: #f5a04f; }
+
+/* Limpar */
+.limpar {
+    background: #d9534f;
+    box-shadow: 0 4px 0 #a03a37;
+}
+.limpar:hover { background: #e26b67; }
+
+/* Igual */
+.igual {
+    background: #4caf50;
+    box-shadow: 0 4px 0 #357a38;
+}
+.igual:hover { background: #63c066; }
+
+/* Teclas que ocupam mais espaço */
+.mais  { grid-row: span 2; height: auto; }   /* + ocupa 2 linhas   */
+.igual { grid-row: span 2; height: auto; }   /* = ocupa 2 linhas   */
+.zero  { grid-column: span 2; }              /* 0 ocupa 2 colunas  */

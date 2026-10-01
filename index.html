@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora PHP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <form class="calculadora" id="form-calc" method="post" action="calcular.php">
+
+        <!-- Campos ocultos: o JavaScript preenche, o PHP lê com $_POST -->
+        <input type="hidden" name="numero1"  id="numero1">
+        <input type="hidden" name="operacao" id="operacao">
+        <input type="hidden" name="numero2"  id="numero2">
+
+        <!-- Visor -->
+        <input type="text" class="visor" id="visor" readonly
+               value="0">
+
+        <!-- Teclado -->
+        <div class="teclado">
+            <button type="button" class="tecla limpar" onclick="limpar()">C</button>
+            <button type="button" class="tecla op" onclick="operador('/')">÷</button>
+            <button type="button" class="tecla op" onclick="operador('*')">×</button>
+            <button type="button" class="tecla op" onclick="operador('-')">−</button>
+
+            <button type="button" class="tecla" onclick="digito('7')">7</button>
+            <button type="button" class="tecla" onclick="digito('8')">8</button>
+            <button type="button" class="tecla" onclick="digito('9')">9</button>
+            <button type="button" class="tecla op mais" onclick="operador('+')">+</button>
+
+            <button type="button" class="tecla" onclick="digito('4')">4</button>
+            <button type="button" class="tecla" onclick="digito('5')">5</button>
+            <button type="button" class="tecla" onclick="digito('6')">6</button>
+
+            <button type="button" class="tecla" onclick="digito('1')">1</button>
+            <button type="button" class="tecla" onclick="digito('2')">2</button>
+            <button type="button" class="tecla" onclick="digito('3')">3</button>
+            <button type="button" class="tecla igual" onclick="calcular()">=</button>
+
+            <button type="button" class="tecla zero" onclick="digito('0')">0</button>
+            <button type="button" class="tecla" onclick="digito('.')">.</button>
+        </div>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
